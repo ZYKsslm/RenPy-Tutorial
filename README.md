@@ -45,6 +45,8 @@
       - [角色（Character）对象](#角色character对象)
         - [定义角色对象](#定义角色对象)
         - [重写ADVCharacter类](#重写advcharacter类)
+    - [图像（image）](#图像image)
+      - [image语句](#image语句)
 
 ## 在开始之前
 
@@ -284,7 +286,7 @@ Ren'Py项目目录分为 *基础目录* 和 *游戏目录*。
 Ren'Py中关键字的概念跟Python中的差不多。有Python基础则可以直接理解。
 
 常见的Ren'Py关键字有：
-**True、False、None、if、else、elif、for、in、with、at、is、or、not、pass、return、break、continue、label、play、voice、image、define、default、style、transform**等。
+**True、False、None、if、else、elif、for、in、with、at、is、or、not、pass、return、break、continue、label、define、default**等。
 
 #### 缩进
 
@@ -598,13 +600,13 @@ label start:
 
 #### _函数
 
-_函数表示其参数（应为一个字符串）是可被翻译的。
+_函数表示其参数（应为一个字符串）是可被翻译的，多对角色名使用。
 
 ```renpy
 define s = Character(name=_("Sylvie"))
 ```
 
-在上面的代码中，_函数表示字符串`Sylvie`是可被翻译的，一般对角色名使用。
+在上面的代码中，_函数表示字符串`Sylvie`是可被翻译的。
 
 #### 角色（Character）对象
 
@@ -612,9 +614,9 @@ define s = Character(name=_("Sylvie"))
 
 >提示：这一部分面向对象概念内容属于拓展知识，可以选择跳过。
 
-对象（Object）是一个面向对象编程的概念，与之对应的是角色（Character）类（class）。简单来说，对象就是一堆数据的封装，类就是具有相似属性和行为的一组对象，一个对象就是类的一个实例。Python跟很多高级语言（如Java）一样都是面向对象（object-oriented）编程。由于Ren'Py是基于Python的，所以Ren'Py中也存在类与对象，像ADVCharacter就是一个类。
+对象（Object）是一个面向对象编程的概念，与之对应的类（class）。简单来说，对象就是一堆数据的封装，是类的实例化；而类就是具有相似属性和行为的总称，一个对象就是类的一个实例。Python跟很多高级语言（如Java）一样都是面向对象（object-oriented）编程。由于Ren'Py是基于Python的，所以Ren'Py中也存在类与对象，像ADVCharacter就是一个类。
 
-我们一般使用Character函数（Character函数是一个构造器，用于构造并返回一个实例对象）定义一个角色对象。
+我们一般使用Character函数（Character函数是一个构造器，用于构造并返回一个对象）定义一个角色对象。
 
 ```renpy
 define s = Character(name=_("Sylvie"))
@@ -634,10 +636,10 @@ Character函数有很多个参数，常用的如下：
   - 与角色关联的图像标签名的字符串。
   
 - who_color
-  - 角色名的颜色，一般为一个表示颜色的十六进制的字符串。
+  - 角色名的颜色，一般为一个表示颜色的十六进制数的字符串。
 
 - what_color
-  - 文本的颜色，一般为一个表示颜色的十六进制的字符串。
+  - 文本的颜色，一般为一个表示颜色的十六进制数的字符串。
 
 - what_prefix
   - 显示对话内容之前，添加的前缀字符串。
@@ -709,7 +711,7 @@ label start:
 
 >该部分为拓展内容，可选择跳过。
 
-其实，Character函数返回给我们的的是一个ADVCharacter类的实例对象，那我们便可以直接写一个新类继承该类，增添新的实例属性，比如好感度、生命值等。
+其实，Character函数返回给我们的的是一个ADVCharacter对象，那我们便可以直接写一个新类继承该类，实现更多功能，如增添新的实例属性，加入好感度、生命值等。
 
 ```renpy
 init python:
@@ -717,10 +719,15 @@ init python:
   NotSet = renpy.object.Sentinel("NotSet")
 
   class MyCharacter(ADVCharacter):
+
+    # 重写父类初始化方法，增加新的实例属性
     def __init__(self, hp, lp, name=NotSet, kind=None, **properties):
+      # 生命值
       self.hp = hp,
+      # 好感度
       self.lp = lp
 
+      # 调用父类初始化方法
       super().__init__(name, kind, **properties)
 
 define s = MyCharacter(
@@ -740,4 +747,39 @@ label start:
   return
 ```
 
-ADVCharacter类源码在目录`renpy-sdk/renpy/character.py`中，或直接在[Github开源仓库](https://github.com/renpy/renpy/blob/master/renpy/character.py)中查看。
+ADVCharacter类的源码在目录`renpy-sdk/renpy/character.py`中，或直接在[Github开源仓库](https://github.com/renpy/renpy/blob/master/renpy/character.py)中查看。
+
+### 图像（image）
+
+图像是视觉小说类游戏不可或缺的东西，在Ren'Py中图像是一类可以使用show语句显示在屏幕上的东西统称，可以是一个可视组件或一张图片等。而Ren'Py给我们提供了一些关于图像的语句。
+
+它们分别是：
+
+1. image语句。
+2. show语句。
+3. scene语句。
+4. hide语句。
+
+#### image语句
+
+我们使用`image`关键字来定义一个图像。
+
+```renpy
+image bg night = "images/bg_night.jpg"
+```
+
+*bg night* 是图像名，而后面则是图片的路径。
+
+一个图像名可能包含一个或多个字段，由空格分隔。图像名的第一个字段称作 *图像标签（tag）*。 后面的字段被称作 *图像属性（attribute）*。
+
+*bg* 就是一个图像标签，*night* 是一个图像属性。
+
+image语句还能把一个可视组件或一个表示颜色的十六进制数的字符串定义为图像：
+
+```renpy
+image bg night = "images/bg girl.jpg"
+image black = "#000000"
+image symbol = Text("Ren'Py")
+```
+
+除此之外，image语句还支持带有ATL语句块。详细在后面的ATL语句块部分再讲。
