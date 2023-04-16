@@ -43,10 +43,9 @@
       - [say语句](#say语句)
       - [\_函数](#_函数)
       - [角色（Character）对象](#角色character对象)
-        - [定义角色对象](#定义角色对象)
-        - [重写ADVCharacter类](#重写advcharacter类)
     - [图像（image）](#图像image)
       - [image语句](#image语句)
+      - [show语句](#show语句)
 
 ## 在开始之前
 
@@ -610,8 +609,6 @@ define s = Character(name=_("Sylvie"))
 
 #### 角色（Character）对象
 
-##### 定义角色对象
-
 >提示：这一部分面向对象概念内容属于拓展知识，可以选择跳过。
 
 对象（Object）是一个面向对象编程的概念，与之对应的类（class）。简单来说，对象就是一堆数据的封装，是类的实例化；而类就是具有相似属性和行为的总称，一个对象就是类的一个实例。Python跟很多高级语言（如Java）一样都是面向对象（object-oriented）编程。由于Ren'Py是基于Python的，所以Ren'Py中也存在类与对象，像ADVCharacter就是一个类。
@@ -707,49 +704,9 @@ label start:
 
 由三引号引起来的文本，Ren’Py会根据内容中的空行自动分段。分段后的每一段内容，都会创建自身的say语句。同时，由于nvl角色默认共用一个界面，所以说完话后记得使用`nvl clear`清空nvl界面。
 
-##### 重写ADVCharacter类
-
->该部分为拓展内容，可选择跳过。
-
-其实，Character函数返回给我们的的是一个ADVCharacter对象，那我们便可以直接写一个新类继承该类，实现更多功能，如增添新的实例属性，加入好感度、生命值等。
-
-```renpy
-init python:
-
-  NotSet = renpy.object.Sentinel("NotSet")
-
-  class MyCharacter(ADVCharacter):
-
-    # 重写父类初始化方法，增加新的实例属性
-    def __init__(self, hp, lp, name=NotSet, kind=None, **properties):
-      # 生命值
-      self.hp = hp,
-      # 好感度
-      self.lp = lp
-
-      # 调用父类初始化方法
-      super().__init__(name, kind, **properties)
-
-define s = MyCharacter(
-  hp=100,
-  lp=500,
-  name=_("Sylvie"),
-  who_color="#FFA500",
-  what_color="#FFE4E1",
-  what_prefix="『",
-  what_suffix="』"
-)
-
-label start:
-
-  s "好感度为[s.lp]"
-
-  return
-```
-
-ADVCharacter类的源码在目录`renpy-sdk/renpy/character.py`中，或直接在[Github开源仓库](https://github.com/renpy/renpy/blob/master/renpy/character.py)中查看。
-
 ### 图像（image）
+
+>[附官方简中文档同步章节](https://www.renpy.cn/doc/displaying_images.html#)
 
 图像是视觉小说类游戏不可或缺的东西，在Ren'Py中图像是一类可以使用show语句显示在屏幕上的东西统称，可以是一个可视组件或一张图片等。而Ren'Py给我们提供了一些关于图像的语句。
 
@@ -783,3 +740,5 @@ image symbol = Text("Ren'Py")
 ```
 
 除此之外，image语句还支持带有ATL语句块。详细在后面的ATL语句块部分再讲。
+
+#### show语句
