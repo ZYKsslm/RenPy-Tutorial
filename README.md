@@ -1,5 +1,7 @@
 # 目录
 
+**推荐在[文档网站](https://zyksslm.github.io/RenPy-Tutorial/)中浏览。**
+
 ## 在开始之前
 
 - [说明](在开始之前.md#说明)
