@@ -1,0 +1,11 @@
+theme: Jekyll-Theme-Primer
+
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    # 是否显示行号
+    line_numbers: true
+    # 是否显示高亮样式
+    span:
+      keep: true
