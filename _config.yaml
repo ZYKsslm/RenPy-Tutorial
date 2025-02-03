@@ -1,4 +1,4 @@
-theme: Jekyll-Theme-Primer
+theme: theme: minima
 
 highlighter: rouge
 kramdown:
