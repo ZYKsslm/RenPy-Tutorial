@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#对话" class="md-skip">
           跳转至
         </a>
       
@@ -353,7 +353,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#say" class="md-nav__link">
+  <a href="#say语句" class="md-nav__link">
     <span class="md-ellipsis">
       say语句
     </span>
@@ -363,7 +363,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#角色对象" class="md-nav__link">
     <span class="md-ellipsis">
       角色对象
     </span>
@@ -377,7 +377,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#特殊文本样式" class="md-nav__link">
     <span class="md-ellipsis">
       特殊文本样式
     </span>
@@ -387,7 +387,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#转义符" class="md-nav__link">
     <span class="md-ellipsis">
       转义符
     </span>
@@ -396,7 +396,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#内插字符" class="md-nav__link">
     <span class="md-ellipsis">
       内插字符
     </span>
@@ -405,7 +405,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#文本标签" class="md-nav__link">
     <span class="md-ellipsis">
       文本标签
     </span>
@@ -474,7 +474,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#say" class="md-nav__link">
+  <a href="#say语句" class="md-nav__link">
     <span class="md-ellipsis">
       say语句
     </span>
@@ -484,7 +484,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#角色对象" class="md-nav__link">
     <span class="md-ellipsis">
       角色对象
     </span>
@@ -498,7 +498,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#特殊文本样式" class="md-nav__link">
     <span class="md-ellipsis">
       特殊文本样式
     </span>
@@ -508,7 +508,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#转义符" class="md-nav__link">
     <span class="md-ellipsis">
       转义符
     </span>
@@ -517,7 +517,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#内插字符" class="md-nav__link">
     <span class="md-ellipsis">
       内插字符
     </span>
@@ -526,7 +526,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#文本标签" class="md-nav__link">
     <span class="md-ellipsis">
       文本标签
     </span>
@@ -558,9 +558,9 @@
   
 
 
-<h1 id="_1">对话</h1>
+<h1 id="对话">对话<a class="headerlink" href="#对话" title="Permanent link">&para;</a></h1>
 <p>文本剧情是视觉小说类游戏的根本，一切游戏形式都要建立在对话之上。Ren'Py为我们提供了简便快捷的say语句来方便演示对话。</p>
-<h2 id="say">say语句</h2>
+<h2 id="say语句">say语句<a class="headerlink" href="#say语句" title="Permanent link">&para;</a></h2>
 <p><code>say</code> 语句一般有以下几种形式：</p>
 <ol>
 <li>一个单一字符串，表示显示的内容。一般用作旁白。</li>
@@ -584,7 +584,7 @@
 <blockquote>
 <p><code>vpunch</code> 是一个内置转场，可以达到让窗口抖动的效果。同时，Ren'Py还内置了很多如 <em>vpunch</em> 的转场，可以在<a href="https://www.renpy.cn/doc/transitions.html#pre-defined-transitions">官方文档</a>中查看。</p>
 </blockquote>
-<h3 id="_2">角色对象</h3>
+<h3 id="角色对象">角色对象<a class="headerlink" href="#角色对象" title="Permanent link">&para;</a></h3>
 <p>我们一般使用 <code>Character</code> 函数构建一个角色对象。</p>
 <pre><code class="language-renpy">define s = Character(&quot;Sylvie&quot;)
 </code></pre>
@@ -698,9 +698,9 @@ label start:
   return
 </code></pre>
 <p>由三引号引起来的文本，Ren'Py会根据内容中的空行自动分段。分段后的每一段内容，都会创建自身的say语句。</p>
-<h2 id="_3">特殊文本样式</h2>
+<h2 id="特殊文本样式">特殊文本样式<a class="headerlink" href="#特殊文本样式" title="Permanent link">&para;</a></h2>
 <p>所有在Ren'Py中以字符串形式呈现的文本都可以使用特殊的样式，下面将介绍一些常用的特殊样式、使用方法以及注意事项。</p>
-<h3 id="_4">转义符</h3>
+<h3 id="转义符">转义符<a class="headerlink" href="#转义符" title="Permanent link">&para;</a></h3>
 <p>如果你想在文本中呈现一些特殊字符需要转义来转义防止Ren'Py误解我们的意思。</p>
 <p>在文本中，以下字符为转义以后的写法：</p>
 <ul>
@@ -727,7 +727,7 @@ label start:
 
     return
 </code></pre>
-<h3 id="_5">内插字符</h3>
+<h3 id="内插字符">内插字符<a class="headerlink" href="#内插字符" title="Permanent link">&para;</a></h3>
 <p>Ren'Py支持在文本中插入一个表达式并计算表达式的值，我们叫做内插字符。在Python中也有类似的字符串格式化用法。</p>
 <p>我们使用一对方括号来修饰我们的表达式。</p>
 <pre><code class="language-renpy">define s = Character(&quot;Sylvie&quot;)
@@ -769,7 +769,7 @@ label start:
 
     return
 </code></pre>
-<h3 id="_6">文本标签</h3>
+<h3 id="文本标签">文本标签<a class="headerlink" href="#文本标签" title="Permanent link">&para;</a></h3>
 <p>如果你使用过HTML，那么你一定对“标签”很熟悉！在Ren'Py中，我们采用文本标签来实现对文本的特殊效果。</p>
 <p>文本标签由一对大括号和一个标签名以及相应参数组成，不同的标签名及参数有不同的效果。</p>
 <p>所有文本标签都需要闭合，其中有些文本标签是自闭和的，而有些文本标签需要对应的闭合标签来闭合。标签闭合间的文本将会呈现特殊效果。一般来说，文本标签的格式为：</p>

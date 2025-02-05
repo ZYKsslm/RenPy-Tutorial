@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#脚本标签" class="md-skip">
           跳转至
         </a>
       
@@ -372,7 +372,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#label" class="md-nav__link">
+  <a href="#label语句" class="md-nav__link">
     <span class="md-ellipsis">
       label语句
     </span>
@@ -381,7 +381,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#call" class="md-nav__link">
+  <a href="#call语句" class="md-nav__link">
     <span class="md-ellipsis">
       call语句
     </span>
@@ -390,7 +390,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#jump" class="md-nav__link">
+  <a href="#jump语句" class="md-nav__link">
     <span class="md-ellipsis">
       jump语句
     </span>
@@ -399,7 +399,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#return" class="md-nav__link">
+  <a href="#return语句" class="md-nav__link">
     <span class="md-ellipsis">
       return语句
     </span>
@@ -408,7 +408,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#特殊标签名" class="md-nav__link">
     <span class="md-ellipsis">
       特殊标签名
     </span>
@@ -417,7 +417,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#全局与局部脚本标签" class="md-nav__link">
     <span class="md-ellipsis">
       全局与局部脚本标签
     </span>
@@ -460,7 +460,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#label" class="md-nav__link">
+  <a href="#label语句" class="md-nav__link">
     <span class="md-ellipsis">
       label语句
     </span>
@@ -469,7 +469,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#call" class="md-nav__link">
+  <a href="#call语句" class="md-nav__link">
     <span class="md-ellipsis">
       call语句
     </span>
@@ -478,7 +478,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#jump" class="md-nav__link">
+  <a href="#jump语句" class="md-nav__link">
     <span class="md-ellipsis">
       jump语句
     </span>
@@ -487,7 +487,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#return" class="md-nav__link">
+  <a href="#return语句" class="md-nav__link">
     <span class="md-ellipsis">
       return语句
     </span>
@@ -496,7 +496,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#特殊标签名" class="md-nav__link">
     <span class="md-ellipsis">
       特殊标签名
     </span>
@@ -505,7 +505,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#全局与局部脚本标签" class="md-nav__link">
     <span class="md-ellipsis">
       全局与局部脚本标签
     </span>
@@ -532,9 +532,9 @@
   
 
 
-<h1 id="_1">脚本标签</h1>
+<h1 id="脚本标签">脚本标签<a class="headerlink" href="#脚本标签" title="Permanent link">&para;</a></h1>
 <p>Ren'Py中所有的游戏流程代码都会分别写进数个脚本标签中。脚本标签类似于Python中的函数，用于跳转或调用。</p>
-<h2 id="label">label语句</h2>
+<h2 id="label语句">label语句<a class="headerlink" href="#label语句" title="Permanent link">&para;</a></h2>
 <p>我们使用 <code>label</code> 语句来定义一个脚本标签，然后是标签名，后面可紧跟一对小括号以添加参数，若没有参数则括号可以省略。参数的写法、作用域等与Python函数相似。</p>
 <pre><code class="language-renpy">label sample_label(content):
 
@@ -542,7 +542,7 @@
 
     return
 </code></pre>
-<h2 id="call">call语句</h2>
+<h2 id="call语句">call语句<a class="headerlink" href="#call语句" title="Permanent link">&para;</a></h2>
 <p><code>call</code> 语句用于让主控流程进入某一脚本标签中，并在执行完这次调用后，回到原本调用的位置。</p>
 <p>call语句后面接一个标签名，表示让主控流程进入指定的脚本标签中。若指定的脚本标签要传入参数，则在标签名后紧跟一对小括号以传参。传参方式与Python函数传参方式完全相同。</p>
 <pre><code class="language-renpy">label start:
@@ -560,7 +560,7 @@ label sample_label(content):
     &quot;[content]&quot;
     return
 </code></pre>
-<h2 id="jump">jump语句</h2>
+<h2 id="jump语句">jump语句<a class="headerlink" href="#jump语句" title="Permanent link">&para;</a></h2>
 <p><code>jump</code> 语句用于让主控流程进入某一脚本标签中，并顺势执行下去。后面接一个标签名，表示让主控流程进入指定的脚本标签中</p>
 <p><strong>jump语句中指定的脚本标签不能传参。</strong></p>
 <p>但你可以给指定的脚本标签添加默认值参数：</p>
@@ -578,7 +578,7 @@ label sample_label(content=&quot;HelloWorld!&quot;):
     &quot;[content]&quot;
     return
 </code></pre>
-<h2 id="return">return语句</h2>
+<h2 id="return语句">return语句<a class="headerlink" href="#return语句" title="Permanent link">&para;</a></h2>
 <p><code>return</code> 语句标志着一段标签代码块的结束。后面还可接一个返回值，返回值储存在变量 <code>_return</code> 中。</p>
 <pre><code class="language-renpy">label start:
 
@@ -620,7 +620,7 @@ label label_3:
     &quot;label 3&quot;
 </code></pre>
 <p><strong>可见，任何在脚本标签结束后不添加return语句的行为都是危险的！除非利它来达到一些特殊的效果。</strong></p>
-<h2 id="_2">特殊标签名</h2>
+<h2 id="特殊标签名">特殊标签名<a class="headerlink" href="#特殊标签名" title="Permanent link">&para;</a></h2>
 <p>一些标签名有特殊的作用，如控制主控流程。常见的特殊标签名有以下这些：</p>
 <ul>
 <li>start</li>
@@ -650,7 +650,7 @@ label label_3:
 </li>
 <li>若该标签存在，在主菜单出现前，该标签内容会被调用。</li>
 </ul>
-<h2 id="_3">全局与局部脚本标签</h2>
+<h2 id="全局与局部脚本标签">全局与局部脚本标签<a class="headerlink" href="#全局与局部脚本标签" title="Permanent link">&para;</a></h2>
 <p>Ren'Py中共有两种脚本标签：<strong>全局脚本标签</strong> 与 <strong>局部脚本标签</strong>。我们一般用的就是全局脚本标签。</p>
 <p>全局脚本标签在所有脚本文件中通用，不能重名；而局部脚本标签则可以重名，但是需要关联一个全局脚本标签。</p>
 <p>在定义局部脚本标签时，我们只需要在标签名前添加一个 <code>.</code> 即可，表示这是一个局部脚本标签而非全局脚本标签，它会与上面最近的一个全局脚本标签自动关联。</p>
