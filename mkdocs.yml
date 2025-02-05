@@ -1,27 +1,25 @@
 site_name: Ren'Py：从入门到入坟
 site_url: https://ZYKsslm.github.io/RenPy-Tutorial
 repo_url: https://github.com/ZYKsslm/RenPy-Tutorial
+
 theme:
   name: material
   language: zh
-nav:
-  - 在开始之前: 在开始之前.md
-  - 你好，Ren'Py。: 你好，Ren'Py。.md
-  - 变量: 变量.md
-  - 脚本标签: 脚本标签.md
-  - 对话: 对话.md
+
 markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
+  - toc:
+      permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js
+  - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-renpy.min.js
   - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js
-  - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js
-  - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js
   - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js
+  - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js
+  - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js
+
 extra_css:
   - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css
-  - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css
+  - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.css
   
