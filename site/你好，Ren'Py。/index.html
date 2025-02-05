@@ -1,0 +1,1080 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://ZYKsslm.github.io/RenPy-Tutorial/%E4%BD%A0%E5%A5%BD%EF%BC%8CRen%27Py%E3%80%82/">
+      
+      
+        <link rel="prev" href="../%E5%9C%A8%E5%BC%80%E5%A7%8B%E4%B9%8B%E5%89%8D/">
+      
+      
+        <link rel="next" href="../%E5%8F%98%E9%87%8F/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+    
+    
+      
+        <title>你好，Ren'Py。 - Ren'Py：从入门到入坟</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d7758b05.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#renpy" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="Ren&#39;Py：从入门到入坟" class="md-header__button md-logo" aria-label="Ren'Py：从入门到入坟" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ren'Py：从入门到入坟
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              你好，Ren'Py。
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ZYKsslm/RenPy-Tutorial" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Ren&#39;Py：从入门到入坟" class="md-nav__button md-logo" aria-label="Ren'Py：从入门到入坟" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Ren'Py：从入门到入坟
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ZYKsslm/RenPy-Tutorial" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9C%A8%E5%BC%80%E5%A7%8B%E4%B9%8B%E5%89%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    在开始之前
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    你好，Ren'Py。
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    你好，Ren'Py。
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="简介">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renpy_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ren'Py能干什么
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renpy_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ren'Py支持的文件格式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      竟然还不会配置开发环境吗？
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="竟然还不会配置开发环境吗？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装SDK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装IDE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renpy_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置Ren'Py启动器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      学前准备
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="学前准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pythonrenpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      我不学Python了，Ren'Py！
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renpy_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ren'Py项目结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      rpy脚本文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpyc" class="md-nav__link">
+    <span class="md-ellipsis">
+      rpyc可执行程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      关键字
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      缩进
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      注释
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8F%98%E9%87%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    变量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%84%9A%E6%9C%AC%E6%A0%87%E7%AD%BE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    脚本标签
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%AF%B9%E8%AF%9D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对话
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="简介">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renpy_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ren'Py能干什么
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renpy_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ren'Py支持的文件格式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      竟然还不会配置开发环境吗？
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="竟然还不会配置开发环境吗？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装SDK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装IDE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renpy_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置Ren'Py启动器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      学前准备
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="学前准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pythonrenpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      我不学Python了，Ren'Py！
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renpy_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ren'Py项目结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      rpy脚本文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpyc" class="md-nav__link">
+    <span class="md-ellipsis">
+      rpyc可执行程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      关键字
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      缩进
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      注释
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="renpy">你好，Ren'Py。</h1>
+<blockquote>
+<p>合抱之木，生于毫末；百丈之台，起于垒土；千里之行，始于足下。——《老子》</p>
+</blockquote>
+<h2 id="_1">简介</h2>
+<p>可以说，Ren'Py天生就是为视觉小说类游戏而生的。</p>
+<p>Ren'Py视觉小说引擎是一款开源的自由软件引擎，用来创作通过电脑（也包含其他设备）叙述故事的视觉小说。Ren'Py之名是由 <em>Renai</em> 与 <em>Python</em> 两词混合而成。<em>Renai</em> 为日文罗马拼音，意指“恋爱”，而 <em>Python</em> 是Ren'Py所使用的语言环境。 </p>
+<p><strong>而且Ren'Py使用超高自由度的MIT协议开源。</strong></p>
+<p>这意味着你可以随意使用Ren'Py引擎，无需向任何人申请，但要承担可能带来的所有责任。</p>
+<h3 id="renpy_1">Ren'Py能干什么</h3>
+<p>Ren'Py几乎支持所有视觉小说所应该具有的功能，包括分支故事、存储和加载游戏、回退到之前故事的存储点、多样性的场景转换等。Ren'Py拥有类似电影剧本的语法，并且能够允许高级用户编写Python代码来增加新的功能。除此之外，游戏引擎内附的出版工具能够为脚本加密以及压缩游戏素材以防止盗版。 </p>
+<p>也就是说，我们不必再去从头开始搭建一个GUI游戏界面，或实现繁多的基础功能，而只需专注于游戏设计。</p>
+<p>同时，Ren'Py具有跨平台性。跨平台意指只需写一次代码，程序就能在多个不同的环境（操作系统）中运行，这将大大节省我们的时间，提高开发效率。</p>
+<p>基于Python的特性，目前Ren'Py支持的平台有：</p>
+<ul>
+<li><code>Windows</code></li>
+<li><code>Linux</code></li>
+<li><em>Mac OS X</em></li>
+<li><code>Android</code></li>
+<li><em>iOS</em></li>
+<li><em>Web</em></li>
+<li>Raspberry Pi</li>
+</ul>
+<p><em>对于引用字体平台的支持最为完善</em>，斜体其次。</p>
+<p><img alt="platforms" src="../resources/images/platforms.jpg" /></p>
+<h3 id="renpy_2">Ren'Py支持的文件格式</h3>
+<p>一部游戏通常包括图片、音频、视频等元素。</p>
+<p>我们可以在Ren'Py中加载这些资源文件，但是Ren'Py支持渲染的图像或播放的影片和音频的格式是有限制的，支持的文件格式具体如下（未经完全测试）：</p>
+<p><em>引用字体格式为常用推荐格式</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">类别</th>
+<th style="text-align: center;">格式</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">图像</td>
+<td style="text-align: center;"><code>JPEG/JPG</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">图像</td>
+<td style="text-align: center;"><code>PNG</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">图像</td>
+<td style="text-align: center;"><code>WEBP</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">图像</td>
+<td style="text-align: center;">BMP</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">图像</td>
+<td style="text-align: center;">GIF</td>
+<td style="text-align: center;">不支持动图</td>
+</tr>
+<tr>
+<td style="text-align: center;">音频</td>
+<td style="text-align: center;">OPUS</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">音频</td>
+<td style="text-align: center;"><code>OGG</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">音频</td>
+<td style="text-align: center;">FLAC</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">音频</td>
+<td style="text-align: center;"><code>WAV</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">音频</td>
+<td style="text-align: center;"><code>MP3</code></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">视频（容器）</td>
+<td style="text-align: center;"><code>WEBM</code></td>
+<td style="text-align: center;">支持VP9、VP8编解码器</td>
+</tr>
+<tr>
+<td style="text-align: center;">视频（容器）</td>
+<td style="text-align: center;"><code>OGG</code></td>
+<td style="text-align: center;">支持Theora编解码器</td>
+</tr>
+<tr>
+<td style="text-align: center;">视频（容器）</td>
+<td style="text-align: center;">MKV</td>
+<td style="text-align: center;">支持多种编解码器</td>
+</tr>
+<tr>
+<td style="text-align: center;">视频（容器）</td>
+<td style="text-align: center;">AVI</td>
+<td style="text-align: center;">支持多种编解码器</td>
+</tr>
+<tr>
+<td style="text-align: center;">视频（容器）</td>
+<td style="text-align: center;">MPEG 4 part 2</td>
+<td style="text-align: center;">包括Xvid和DivX</td>
+</tr>
+<tr>
+<td style="text-align: center;">视频（容器）</td>
+<td style="text-align: center;">MPEG 2</td>
+<td style="text-align: center;">部分支持，取决于具体实现</td>
+</tr>
+<tr>
+<td style="text-align: center;">视频（容器）</td>
+<td style="text-align: center;">MPEG 1</td>
+<td style="text-align: center;">部分支持，取决于具体实现</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<ul>
+<li>图像文件推荐转换为 <code>WEBP</code> 格式（WEBP是一种高效的无损或有损图像格式，适合游戏资源）</li>
+<li>视频文件推荐转换为 <code>WEBM</code> 格式（WEBM是Ren'Py支持的主要视频格式）</li>
+</ul>
+</blockquote>
+<h2 id="_2">竟然还不会配置开发环境吗？</h2>
+<p>如果你已经配置好了开发环境，那么可以跳过这一章节。</p>
+<h3 id="sdk">安装SDK</h3>
+<p>SDK即为 <em>Software Development Kit（软件开发工具包）</em>，用于给开发者提供开发工具，也就是Ren'Py的本体（其中包括一个Ren'Py Launcher）。安装完SDK我们就可以使用Ren'Py来运行我们编写的脚本代码。</p>
+<p>SDK可以在<a href="https://renpy.org/latest.html">Ren'Py官方网站</a>下载最新版。</p>
+<h3 id="ide">安装IDE</h3>
+<p>IDE即为 <em>Integrated Development Environment（集成开发环境）</em>，是用于提供程序开发环境的应用程序，一般包括代码编辑器、编译器、调试器和图形用户界面等工具。一款优秀的IDE可以让我们更高效地开发。</p>
+<p>在支持Ren'Py开发的IDE中，我们选择微软的开源代码编辑器 <code>Visual Studio Code</code>，轻便、高效、舒适。</p>
+<p>我们可以在<a href="https://code.visualstudio.com/">vscode官网</a>中找到与自己操作系统对应的版本下载安装。</p>
+<p><img alt="vsocode" src="../resources/images/vscode.jpg" /></p>
+<p>安装完成后，我们打开vscode，打开扩展商店搜索 <code>renpy</code> 并下载Ren'Py扩展插件</p>
+<p><img alt="renpy_extension" src="../resources/images/renpy_extension.jpg" /></p>
+<h3 id="renpy_3">配置Ren'Py启动器</h3>
+<p>打开Ren'Py启动器，进入设置，点击 <code>文本编辑器</code>，选择 <code>Visual Studio Code（操作系统）</code>，这样，刚才安装的vscode就成为了我们的默认文本编辑器了。</p>
+<p><img alt="default_ide" src="../resources/images/default_ide.jpg" /></p>
+<h3 id="_3">基本操作</h3>
+<ol>
+<li>
+<p>点击 <code>创建新项目</code> 以创建一个新项目。</p>
+</li>
+<li>
+<p>点击 <code>启动项目</code> 以运行一个项目。</p>
+</li>
+<li>
+<p>点击 <code>打开项目</code> 以使用默认文本编辑器打开项目目录。</p>
+</li>
+</ol>
+<p>详细使用请参考官方文档。</p>
+<p><img alt="launcher" src="../resources/images/launcher.png" /></p>
+<h2 id="_4">学前准备</h2>
+<h3 id="pythonrenpy">我不学Python了，Ren'Py！</h3>
+<p>由于Ren'Py是基于Python的，所以有很多概念和语法都和Python相似甚至是一样。<strong>你几乎可以在Ren'Py引擎中完全使用Python语句！</strong></p>
+<p><strong>因此我们强烈建议所有Ren'Py使用者都掌握Python基础</strong>。</p>
+<p>如果你已经熟练掌握Python，那么相信学习Ren'Py对你来说并不是什么难事，甚至只是相当于学习一个第三方库而已。所以，先熟悉Python将会使你的Ren'Py学习之路更加平坦。本教程会涉及一些Python内容。</p>
+<p>如果你是零基础开发者，那么推荐你去一些视频网站（如 <em>Bilibili</em>）或是阅读相关书籍学习。</p>
+<p>对于Python知识掌握的要求：掌握Python的基本数据类型、流程控制语句、常用的内建函数以及基本的面向对象编程思想。</p>
+<h3 id="renpy_4">Ren'Py项目结构</h3>
+<p>Ren'Py项目目录分为 <em>基础目录</em> 和 <em>游戏目录</em>。</p>
+<p><strong>基础目录</strong>即为以创建项目时输入的项目名为名的目录，一般用于存放与游戏本体无关的文件如 <em>LICENSE</em> 和 <em>README</em> 等。</p>
+<p><strong>游戏目录</strong>即为位于基础目录下的名为 <em>game</em> 的目录，用于存放游戏资源和脚本文件等。</p>
+<p>一个标准的Ren'Py项目目录结构同时也是项目的初始目录结构应如下所示：</p>
+<ul>
+<li>Project</li>
+<li>log.txt</li>
+<li>game<ul>
+<li>audio</li>
+<li>......</li>
+<li>fonts</li>
+<li>......</li>
+<li>gui</li>
+<li>......</li>
+<li>images</li>
+<li>......</li>
+<li>saves</li>
+<li>navigation.json</li>
+<li>persistent</li>
+<li>tl</li>
+<li>common.rpym</li>
+<li>common.rpymc</li>
+<li>......</li>
+<li>gui.rpy</li>
+<li>gui.rpyc</li>
+<li>options.rpy</li>
+<li>options.rpyc</li>
+<li>screens.rpy</li>
+<li>screens.rpyc</li>
+<li>script.rpy</li>
+<li>script.rpyc</li>
+<li>SourceHanSansLite.ttf</li>
+<li>......</li>
+</ul>
+</li>
+<li>......</li>
+</ul>
+<p><em>Project</em> 即为你的项目目录也是基础目录，基础目录下的 <em>game</em> 目录即为你的游戏目录。</p>
+<ul>
+<li><code>log.txt</code> 文件为游戏日志，包含游戏版本，创建时间等信息。</li>
+<li><code>trackback.txt</code> 文件（若存在）为游戏报错信息。</li>
+<li><code>error.txt</code> 文件（若存在）为脚本报错信息（语法错误）。</li>
+<li><code>navigation.json</code> 文件为项目配置信息。</li>
+<li><code>persistent</code> 文件存储了游戏的持久化数据。</li>
+<li><code>.rpym</code> 文件为游戏翻译文件。</li>
+<li><code>.rpy</code> 文件为游戏脚本</li>
+<li><code>.rpyc</code> 和 <code>.rpymc</code> 文件为编译后的二进制文件，游戏真正运行于这些文件。</li>
+</ul>
+<p>在游戏中我们使用 <code>config.gamedir</code> 和 <code>config.basedir</code> 来获取当前游戏的游戏目录和项目目录。</p>
+<h3 id="rpy">rpy脚本文件</h3>
+<p>游戏目录中后缀名为 <em>rpy</em> 的文件就是Ren'Py的脚本文件，用于编写脚本代码。你可以直接在里面编写代码或是自己创建脚本文件。脚本文件可以有一个或多个。</p>
+<p>一个rpy脚本文件的文件名应遵守如下命名规范：</p>
+<ul>
+<li>规范格式</li>
+<li>全小写并使用下划线，如：<code>this_is_an_example</code></li>
+<li>
+<p>使用驼峰命名法，如：<code>thisIsAnExample</code></p>
+</li>
+<li>
+<p>具有意义</p>
+</li>
+<li>
+<p>开头不包含数字</p>
+</li>
+</ul>
+<p>另外，在游戏启动时，Ren'Py会读取游戏目录下（包括子目录）的所有脚本文件，它们都会被扫描并组合成整个游戏的脚本。</p>
+<p>所以请注意：</p>
+<ol>
+<li>所有脚本文件中定义的变量都能够被“跨文件”访问。例如你在一个脚本文件中定义了全局变量 <em>var</em> ，那么在任意一个脚本文件中都能够访问该变量 <em>var</em>。</li>
+<li>所有脚本文件中的变量均不能重名。</li>
+</ol>
+<p>因此，你既可以将所有代码都写进一个脚本文件中，也可以根据分类写成多个脚本文件，但要注意变量名不能冲突。</p>
+<h3 id="rpyc">rpyc可执行程序</h3>
+<p>后缀名为 <em>rpyc</em> 的文件是同名rpy脚本文件编译后的二进制可执行程序。</p>
+<p>在我们每次编写完代码重启项目时，Ren'Py会自动生成或更新rpyc文件，再次运行时会直接运行rpyc文件而省去编译的过程（若脚本文件没有发生更改）。</p>
+<p>所以在没有rpy文件而有rpyc文件的情况下，游戏依然能够运行其功能。但是除了发布版本之外不应删除rpy文件。</p>
+<p><strong>所以，当你更新了某个rpy脚本文件的文件名时，记得同时删除对应的rpyc文件，否则再次运行将造成脚本内容冲突（Ren'Py会根据新文件名生成新的rpyc文件）！</strong></p>
+<h3 id="_5">关键字</h3>
+<p>关键字是一个英文单词，必须在游戏脚本中合法出现。这些关键字是保留字，不能用作变量名、标签名或任何其他标识符。</p>
+<p>Ren'Py中关键字的概念类似于Python中的关键字。</p>
+<p>同时，Ren'Py中还有一些预留名同样不能作为变量名使用，否则将引发错误。</p>
+<p>这是完整的预留名列表：<a href="https://doc.renpy.cn/zh-CN/reserved.html#reserved-names">预留名</a></p>
+<h3 id="_6">缩进</h3>
+<p>如果你学过Python，那么你一定清楚地明白缩进的重要性。Ren'Py与Python一样，使用缩进来表示代码的逻辑。</p>
+<p>~~这里就不再赘述了。~~</p>
+<p>才怪！</p>
+<p>笔者见过太多人因缩进问题而导致逻辑不一、程序运行异常甚至报错的问题。缩进是Python语言的灵魂，直接关系到整个程序的运行，这就是缩进的重要性！</p>
+<p>说到缩进，这里就不得不再提一下 <em>语句块 (block)</em> 了。简而言之，语句块通常由缩进来体现，<strong>一个语句块就是一行或一组完整的代码</strong>，且语句块可以嵌套。</p>
+<pre><code class="language-renpy">&quot;一个语句块&quot;
+</code></pre>
+<pre><code class="language-renpy">if True:
+    &quot;这是if语句块&quot;
+    &quot;还是在if语句块中&quot;
+</code></pre>
+<pre><code class="language-renpy">image:
+    block:
+        &quot;这是block语句块&quot;
+        &quot;也在image语句块中&quot;
+</code></pre>
+<h3 id="_7">注释</h3>
+<p>对于程序员来说，写注释是一个重要的习惯。注释用于代码解释或功能提示等，且不会被执行。</p>
+<p>好的注释能够让你的代码更加简洁易懂，让你的思路更加清晰，也可以让你日后或别人再看代码时不至于一头雾水。</p>
+<p>和Python一样，在Ren'Py中我们以使用<code>#</code>号放在一条语句的<strong>开头</strong>来表示一条注释。</p>
+<p>注释可以放在任何位置，但不能插在一行代码的前面或中间，我们一般置于一行代码的上一行或末尾。</p>
+<pre><code class="language-renpy"># 定义角色对象
+define s = Character(&quot;Sylvie&quot;)
+init python:
+    s = Character(&quot;Sylvie&quot;) # Python等效语句
+
+label start:
+    s &quot;Hi, I'm Sylvie.&quot; # 希尔薇发言
+    $ s(&quot;Hi, I'm Sylvie.&quot;)  # Python等效语句
+    $ renpy.say(s, &quot;Hi, I'm Sylvie.&quot;) # Python等效语句
+
+    return
+</code></pre>
+<p>那么，在进行完所有的前置准备后，我们就要开始正式学习Ren'Py语法了。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f13b1293.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+      
+    
+  </body>
+</html>

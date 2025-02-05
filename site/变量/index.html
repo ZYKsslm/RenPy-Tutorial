@@ -1,0 +1,942 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://ZYKsslm.github.io/RenPy-Tutorial/%E5%8F%98%E9%87%8F/">
+      
+      
+        <link rel="prev" href="../%E4%BD%A0%E5%A5%BD%EF%BC%8CRen%27Py%E3%80%82/">
+      
+      
+        <link rel="next" href="../%E8%84%9A%E6%9C%AC%E6%A0%87%E7%AD%BE/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+    
+    
+      
+        <title>变量 - Ren'Py：从入门到入坟</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d7758b05.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="Ren&#39;Py：从入门到入坟" class="md-header__button md-logo" aria-label="Ren'Py：从入门到入坟" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ren'Py：从入门到入坟
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              变量
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ZYKsslm/RenPy-Tutorial" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Ren&#39;Py：从入门到入坟" class="md-nav__button md-logo" aria-label="Ren'Py：从入门到入坟" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Ren'Py：从入门到入坟
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ZYKsslm/RenPy-Tutorial" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9C%A8%E5%BC%80%E5%A7%8B%E4%B9%8B%E5%89%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    在开始之前
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%BD%A0%E5%A5%BD%EF%BC%8CRen%27Py%E3%80%82/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    你好，Ren'Py。
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    变量
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    变量
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量定义
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="变量定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define" class="md-nav__link">
+    <span class="md-ellipsis">
+      define语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default" class="md-nav__link">
+    <span class="md-ellipsis">
+      default语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      单行Python语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      多行Python语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      init python语句
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储区
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="存储区">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      常规定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      在python语句中定义
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      常规使用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      在python语句中使用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%84%9A%E6%9C%AC%E6%A0%87%E7%AD%BE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    脚本标签
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%AF%B9%E8%AF%9D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对话
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量定义
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="变量定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define" class="md-nav__link">
+    <span class="md-ellipsis">
+      define语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default" class="md-nav__link">
+    <span class="md-ellipsis">
+      default语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      单行Python语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      多行Python语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      init python语句
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储区
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="存储区">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      常规定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      在python语句中定义
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      常规使用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      在python语句中使用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">变量</h1>
+<h2 id="_2">变量定义</h2>
+<h3 id="define">define语句</h3>
+<p>define语句用于在初始化阶段给一个<strong>全局变量</strong>赋值。</p>
+<p><strong>用define语句定义的变量会被当作一个常量，在存档时不会被保存，不应被修改</strong>。</p>
+<p><strong>define语句可以放在脚本文件的任何位置，但一般建议放在脚本文件的开头（顶级位置）。</strong></p>
+<pre><code class="language-renpy"># 定义一个名为Sylvie的角色
+define s = Character(&quot;Sylvie&quot;)
+
+label start:
+    s &quot;Hello, world!&quot;
+    return
+</code></pre>
+<h3 id="default">default语句</h3>
+<p>default语句用于给一个在游戏初始化时未定义的<strong>全局变量</strong>赋值。</p>
+<p><strong>所有用default定义的变量在存档时都会被自动保存</strong>。</p>
+<p><strong>default语句可以放在脚本文件的任何位置，但一般建议放在脚本文件的开头（顶级位置），界面变量除外。</strong></p>
+<pre><code class="language-renpy"># 定义一个名为Sylvie的角色
+define s = Character(&quot;Sylvie&quot;)
+# 定义初始好感度为0
+default love = 0
+
+label start:
+    s &quot;Hello, world!&quot;
+    $ love += 10    # 好感度加10
+    return
+</code></pre>
+<h3 id="python">单行Python语句</h3>
+<p>单行Python语句由一个<code>$</code>作为标志，后面可跟一条Python语句。</p>
+<p>单行Python语句一般有三个作用：</p>
+<ol>
+<li>定义临时变量</li>
+<li>修改已经定义过的全局变量（如使用<code>default</code>语句定义的变量）</li>
+<li>调用函数或方法</li>
+</ol>
+<pre><code class="language-renpy">default num = 0
+
+label start:
+    $ a = 1    # 定义临时变量a，离开start标签就会被回收
+    &quot;num的初始值为[num]&quot;
+    $ num += 1    # 修改全局变量num，使其增加1
+    &quot;num的值为[num]&quot;
+    &quot;a的值为[a]&quot;
+    return
+</code></pre>
+<h3 id="python_1">多行Python语句</h3>
+<p>多行Python语句与单行语句的作用一样，但是可包含一条或多条Python语句。</p>
+<pre><code class="language-renpy">default num = 0
+
+label start:
+    &quot;num的初始值为[num]&quot;
+    python:
+        a = 1    # 定义临时变量a，离开start标签就会被回收
+        num += 1    # 修改全局变量num，使其增加1
+    &quot;num的值为[num]&quot;
+    &quot;a的值为[a]&quot;
+    return
+</code></pre>
+<h3 id="init-python">init python语句</h3>
+<p>init python语句本质上是多行Python语句，但在初始化阶段运行。可以用于定义类和函数，或者初始化样式、配置变量、持久化数据。</p>
+<p>与define语句类似，在init python语句中被赋值的变量不会用于存档、读档，且不接受回滚。因此，在初始化完成后，这些变量值（常量）就不该改动。</p>
+<pre><code class="language-renpy">init python:
+    # 定义一个名为Sylvie的角色
+    s = Character(&quot;Sylvie&quot;)
+
+    # 定义greet函数
+    def greet(speaker, content=&quot;Ciallo～(∠・ω&lt; )⌒★&quot;):
+        &quot;&quot;&quot;让某位角色打招呼&quot;&quot;&quot;
+        speaker(content)
+
+default num = 0
+
+label start:
+    python:
+        greet(s)    # 让Sylvie打招呼
+        s(&quot;num的初始值为[num]&quot;)
+        a = 1    # 定义临时变量a，离开start标签就会被回收
+        num += 1    # 修改全局变量num，使其增加1
+        s(&quot;num的值为[num]&quot;)
+        s(&quot;a的值为[a]&quot;)
+    return
+</code></pre>
+<p>在上面的代码中，</p>
+<pre><code class="language-renpy">init python:
+    s = Character(&quot;Sylvie&quot;)
+</code></pre>
+<p>的作用等价于</p>
+<pre><code class="language-renpy">define s = Character(&quot;Sylvie&quot;)
+</code></pre>
+<p>但是不利于调试。所以定义常量建议使用define语句。</p>
+<p>init python语句支持设定运行优先级，可以在 <code>init</code> 和 <code>python</code> 之间可以放一个运行优先级数值。如果没有指定优先级，默认使用0。</p>
+<p>init python语句按照优先级数值从低到高的顺序运行。优先级相同的情况下，按照文件名的Unicode字符顺序。</p>
+<p>为了避免与Ren'Py引擎产生冲突，最好选用 <code>[-999, 999]</code> 范围内的数作为优先级。原则上，负整数的优先级主要用在库和配置，普通的init python语句应该使用0或者正整数作为优先级。</p>
+<pre><code class="language-renpy">init 1 python:
+    a = 0
+
+init 2 python:
+    a = 1
+
+label start:
+    &quot;a的值为[a]&quot;
+    return
+</code></pre>
+<hr />
+<h2 id="_3">存储区</h2>
+<p>在Ren'Py中，变量所处的命名空间称为存储区。<strong>在同一存储区中，变量名不能重复，否则将产生冲突。</strong> 默认的存储区为 <code>store</code>。</p>
+<h3 id="_4">定义</h3>
+<h4 id="_5">常规定义</h4>
+<p>在定义变量时使用 <code>Namespace.var</code> 的方式可以在 <code>Namespace</code> 存储区下定义变量 <code>var</code>，若存储区不存在则创建一个，若位于默认存储区即 <code>store</code> 则省略。</p>
+<pre><code class="language-renpy"># 变量默认定义于store存储区下
+define s = Character(&quot;Sylvie&quot;)
+# 在sylvie存储区中定义love变量
+default Sylvie.love = 0
+
+label start:
+    &quot;[s.name]的好感度为[Sylvie.love]&quot;
+    return
+</code></pre>
+<h4 id="python_2">在python语句中定义</h4>
+<p>使用 <code>in</code> 分句可在python语句中接入自定义的存储区</p>
+<pre><code class="language-renpy">define s = Character(&quot;Sylvie&quot;)
+
+# 接入sylvie存储区
+init python in Sylvie:
+    # 在sylvie存储区中定义love变量
+    love = 0 
+
+label start:
+    &quot;[s.name]的好感度为[Sylvie.love]&quot;
+
+    # 接入sylvie存储区
+    python in Sylvie:
+        love += 1
+
+    &quot;[s.name]的好感度为[Sylvie.love]&quot;
+    return
+</code></pre>
+<h3 id="_6">使用</h3>
+<h4 id="_7">常规使用</h4>
+<p>使用 <code>namespace.var</code> 的方式可以访问位于 <code>namespace</code> 存储区下的变量 <code>var</code>，默认存储区即 <code>store</code> 则可省略。</p>
+<pre><code class="language-renpy"># 变量默认定义于store存储区下
+define s = Character(&quot;Sylvie&quot;)
+default num = 0
+
+label start:
+    # 下面两条语句等价
+    s &quot;Ciallo～(∠・ω&lt; )⌒★&quot;
+    store.s &quot;Ciallo～(∠・ω&lt; )⌒★&quot;
+
+    # 下面两条语句等价
+    s &quot;[num]&quot;
+    s &quot;[store.num]&quot;
+
+    return
+</code></pre>
+<h4 id="python_3">在python语句中使用</h4>
+<p>要在python语句中使用自定义的存储区但又不想接入该存储区（如需要同时使用多个不同的存储区）可以使用 <code>from import</code> 语句导入该存储区。</p>
+<pre><code class="language-renpy">define s = Character(&quot;Sylvie&quot;)
+define a = Character(&quot;Alice&quot;)
+
+init python in Sylvie:
+    # 在Sylvie存储区中定义love变量
+    love = 0 
+
+init python in Alice:
+    # 在Alice存储区中定义love变量
+    love = 0 
+
+
+label start:
+    &quot;[s.name]的好感度为[Sylvie.love]&quot;
+    &quot;[a.name]的好感度为[Alice.love]&quot;
+
+    # 默认接入存储区store
+    python:
+        from store import Sylvie    # 导入sylvie存储区
+        from store import Alice     # 导入alice存储区
+
+        Sylvie.love += 1
+        Alice.love += 1
+
+    &quot;[s.name]的好感度为[Sylvie.love]&quot;
+    &quot;[a.name]的好感度为[Alice.love]&quot;
+    return
+</code></pre>
+<p>若只想单纯使用而不修改某个自定义存储区下的变量，也可以单独导入该变量。</p>
+<pre><code class="language-python"># 导入alice存储区中的love变量
+from store.Alice import love
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f13b1293.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+      
+    
+  </body>
+</html>
