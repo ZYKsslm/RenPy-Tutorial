@@ -4,3 +4,8 @@ description: Ren'Py：从入门到入坟
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
+
+markdown: kramdown
+highlighter: none       # 关闭默认高亮
+kramdown:
+  syntax_highlighter: none
