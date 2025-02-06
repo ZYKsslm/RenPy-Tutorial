@@ -39,10 +39,6 @@ nav:
   - 脚本标签: 脚本标签.md
   - 对话: 对话.md
 
-plugins:
-  - search:
-  - print-site:
-
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-renpy.min.js
