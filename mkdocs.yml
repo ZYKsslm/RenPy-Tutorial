@@ -5,8 +5,29 @@ repo_url: https://github.com/ZYKsslm/RenPy-Tutorial
 theme:
   name: material
   language: zh
+  features:
+    - content.code.copy
+    - navigation.tracking
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue  # 浅色模式主色调
+      accent: purple  # 浅色模式强调色
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+        
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo  # 深色模式主色调
+      accent: pink  # 深色模式强调色
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
 
 markdown_extensions:
+  - pymdownx.tilde
   - toc:
       permalink: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
@@ -18,15 +39,14 @@ nav:
   - 脚本标签: 脚本标签.md
   - 对话: 对话.md
 
+plugins:
+  - search:
+  - print-site:
+
 extra_javascript:
-  - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js
-  - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-renpy.min.js
-  - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js
-  - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js
-  - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js
-  - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-renpy.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js
 
 extra_css:
-  - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css
-  - https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.css
-  
+  - https://cdn.jsdelivr.net/npm/prism-themes/themes/prism-one-dark.css
