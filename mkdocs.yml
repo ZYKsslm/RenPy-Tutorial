@@ -5,6 +5,11 @@ repo_url: https://github.com/ZYKsslm/RenPy-Tutorial
 theme:
   name: material
   language: zh
+  
+  icon:
+    logo: material/book-open-page-variant
+    repo: fontawesome/brands/github
+      
   features:
     - content.code.copy
     - navigation.tracking
@@ -38,6 +43,13 @@ nav:
   - 变量: 变量.md
   - 脚本标签: 脚本标签.md
   - 对话: 对话.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ZYKsslm
+    - icon: fontawesome/brands/bilibili
+      link: https://space.bilibili.com/590816142
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js
