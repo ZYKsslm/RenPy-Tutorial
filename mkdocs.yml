@@ -58,5 +58,4 @@ extra_javascript:
 
 extra_css:
   - https://cdn.jsdelivr.net/npm/prism-themes/themes/prism-one-dark.css
-  - custom.css
   
