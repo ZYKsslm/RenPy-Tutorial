@@ -260,8 +260,8 @@ image:
 ```renpy
 # 定义角色对象
 define s = Character("Sylvie")
-init python:
-    s = Character("Sylvie") # Python等效语句
+# init python:
+#     s = Character("Sylvie") # Python等效语句
 
 label start:
     s "Hi, I'm Sylvie." # 希尔薇发言
