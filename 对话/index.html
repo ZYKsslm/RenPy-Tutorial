@@ -1,0 +1,1224 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://ZYKsslm.github.io/RenPy-Tutorial/%E5%AF%B9%E8%AF%9D/">
+      
+      
+        <link rel="prev" href="../%E8%84%9A%E6%9C%AC%E6%A0%87%E7%AD%BE/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>对话 - Ren'Py：从入门到入坟</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes/themes/prism-one-dark.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#对话" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="Ren&#39;Py：从入门到入坟" class="md-header__button md-logo" aria-label="Ren'Py：从入门到入坟" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ren'Py：从入门到入坟
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              对话
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="pink"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ZYKsslm/RenPy-Tutorial" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Ren&#39;Py：从入门到入坟" class="md-nav__button md-logo" aria-label="Ren'Py：从入门到入坟" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    Ren'Py：从入门到入坟
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ZYKsslm/RenPy-Tutorial" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%9C%A8%E5%BC%80%E5%A7%8B%E4%B9%8B%E5%89%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    在开始之前
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%BD%A0%E5%A5%BD%EF%BC%8CRen%27Py%E3%80%82/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    你好，Ren'Py。
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8F%98%E9%87%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    变量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%84%9A%E6%9C%AC%E6%A0%87%E7%AD%BE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    脚本标签
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    对话
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    对话
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#say语句" class="md-nav__link">
+    <span class="md-ellipsis">
+      say语句
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="say语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#角色对象" class="md-nav__link">
+    <span class="md-ellipsis">
+      角色对象
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#特殊文本样式" class="md-nav__link">
+    <span class="md-ellipsis">
+      特殊文本样式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="特殊文本样式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#转义符" class="md-nav__link">
+    <span class="md-ellipsis">
+      转义符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#内插字符" class="md-nav__link">
+    <span class="md-ellipsis">
+      内插字符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#文本标签" class="md-nav__link">
+    <span class="md-ellipsis">
+      文本标签
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文本标签">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      a
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alpha" class="md-nav__link">
+    <span class="md-ellipsis">
+      alpha
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      b
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i" class="md-nav__link">
+    <span class="md-ellipsis">
+      i
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s" class="md-nav__link">
+    <span class="md-ellipsis">
+      s
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u" class="md-nav__link">
+    <span class="md-ellipsis">
+      u
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color" class="md-nav__link">
+    <span class="md-ellipsis">
+      color
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cps" class="md-nav__link">
+    <span class="md-ellipsis">
+      cps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#font" class="md-nav__link">
+    <span class="md-ellipsis">
+      font
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size" class="md-nav__link">
+    <span class="md-ellipsis">
+      size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      fast
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nw" class="md-nav__link">
+    <span class="md-ellipsis">
+      nw
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#say语句" class="md-nav__link">
+    <span class="md-ellipsis">
+      say语句
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="say语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#角色对象" class="md-nav__link">
+    <span class="md-ellipsis">
+      角色对象
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#特殊文本样式" class="md-nav__link">
+    <span class="md-ellipsis">
+      特殊文本样式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="特殊文本样式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#转义符" class="md-nav__link">
+    <span class="md-ellipsis">
+      转义符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#内插字符" class="md-nav__link">
+    <span class="md-ellipsis">
+      内插字符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#文本标签" class="md-nav__link">
+    <span class="md-ellipsis">
+      文本标签
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文本标签">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      a
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alpha" class="md-nav__link">
+    <span class="md-ellipsis">
+      alpha
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      b
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i" class="md-nav__link">
+    <span class="md-ellipsis">
+      i
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s" class="md-nav__link">
+    <span class="md-ellipsis">
+      s
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u" class="md-nav__link">
+    <span class="md-ellipsis">
+      u
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color" class="md-nav__link">
+    <span class="md-ellipsis">
+      color
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cps" class="md-nav__link">
+    <span class="md-ellipsis">
+      cps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#font" class="md-nav__link">
+    <span class="md-ellipsis">
+      font
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size" class="md-nav__link">
+    <span class="md-ellipsis">
+      size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      fast
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nw" class="md-nav__link">
+    <span class="md-ellipsis">
+      nw
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="对话">对话<a class="headerlink" href="#对话" title="Permanent link">&para;</a></h1>
+<p>文本剧情是视觉小说类游戏的根本，一切游戏形式都要建立在对话之上。Ren'Py为我们提供了简便快捷的say语句来方便演示对话。</p>
+<h2 id="say语句">say语句<a class="headerlink" href="#say语句" title="Permanent link">&para;</a></h2>
+<p><code>say</code> 语句一般有以下几种形式：</p>
+<ol>
+<li>一个单一字符串，表示显示的内容。一般用作旁白。</li>
+<li>由两个字符串组成，前面的字符串表示发言人的名字，后面的表示显示的内容。</li>
+<li>表示显示的内容的字符串用三引号引起，方便显示长段文本。</li>
+<li>由一个角色对象和一个字符串组成，角色对象控制发言展现的形式，字符串则是显示的内容。这种形式也是最为常用的。</li>
+</ol>
+<blockquote>
+<p>有些say语句会在原有基础上加上一个 <code>with</code> 从句，后跟上一个转场来实现一些演出效果。</p>
+</blockquote>
+<pre><code class="language-renpy">label start:
+
+    &quot;我很紧张&quot;
+
+    &quot;我&quot; &quot;我喜欢你！&quot;
+
+    &quot;希尔薇&quot; &quot;这是真的吗？！&quot; with vpunch
+
+    return
+</code></pre>
+<blockquote>
+<p><code>vpunch</code> 是一个内置转场，可以达到让窗口抖动的效果。同时，Ren'Py还内置了很多如 <em>vpunch</em> 的转场，可以在<a href="https://www.renpy.cn/doc/transitions.html#pre-defined-transitions">官方文档</a>中查看。</p>
+</blockquote>
+<h3 id="角色对象">角色对象<a class="headerlink" href="#角色对象" title="Permanent link">&para;</a></h3>
+<p>我们一般使用 <code>Character</code> 函数构建一个角色对象。</p>
+<pre><code class="language-renpy">define s = Character(&quot;Sylvie&quot;)
+</code></pre>
+<p>Character函数支持很多参数，常用的如下：</p>
+<ul>
+<li>
+<p><strong>name</strong></p>
+<ul>
+<li>角色的名字。如果该参数是一个字符串，则在对话中显示为角色名；如果为 <code>None</code>，则不显示名字，可用于旁白。</li>
+</ul>
+</li>
+<li>
+<p><strong>kind</strong></p>
+<ul>
+<li>新建角色的基底角色类型。通常取值为 <code>adv</code> 或 <code>nvl</code>。<ul>
+<li><code>adv</code>：文本显示在对话框中。</li>
+<li><code>nvl</code>：文本显示在屏幕中间。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>image</strong></p>
+<ul>
+<li>与角色关联的图像标签名，类型为字符串。</li>
+</ul>
+</li>
+<li>
+<p><strong>who_color</strong></p>
+<ul>
+<li>角色名的颜色，通常为一个表示颜色的十六进制数的字符串。</li>
+</ul>
+</li>
+<li>
+<p><strong>what_color</strong></p>
+<ul>
+<li>对话文本的颜色，通常为一个表示颜色的十六进制数的字符串。</li>
+</ul>
+</li>
+<li>
+<p><strong>what_prefix</strong></p>
+<ul>
+<li>在显示对话内容之前添加的前缀字符串。</li>
+</ul>
+</li>
+<li>
+<p><strong>what_suffix</strong></p>
+<ul>
+<li>在显示对话内容之后添加的后缀字符串。</li>
+</ul>
+</li>
+<li>
+<p><strong>who_prefix</strong></p>
+<ul>
+<li>在显示角色名字之前添加的前缀字符串。</li>
+</ul>
+</li>
+<li>
+<p><strong>who_suffix</strong></p>
+<ul>
+<li>在显示角色名字之后添加的后缀字符串。</li>
+</ul>
+</li>
+<li>
+<p><strong>dynamic</strong></p>
+<ul>
+<li>如果为 <code>True</code>，则角色名 <code>name</code> 应是一个包含 Python 表达式的字符串。该表达式会在每行对话执行前进行计算，计算结果将作为角色名。</li>
+</ul>
+</li>
+<li>
+<p><strong>condition</strong></p>
+<ul>
+<li>如果给定，该参数应是一个包含 Python 表达式的字符串。如果表达式结果为 <code>False</code>，则对话不会发生，即 <code>say</code> 语句不会执行。</li>
+</ul>
+</li>
+<li>
+<p><strong>ctc</strong></p>
+<ul>
+<li>用于“点击继续”提示的可展现部件。如果使用了其他特殊提示，则可能不会显示。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>以 <code>who</code> 为前缀的参数表示人名的样式，以 <code>what</code> 为前缀的参数表示文本的样式。除了以上的样式参数，还支持更多样式，可查看<a href="https://doc.renpy.cn/zh-CN/style_properties.html#text-style-properties">官方文档</a>。</p>
+<p>使用 <code>who_style</code> 或 <code>what_style</code> 的格式（<code>style</code>为样式名）即可作为参数传入Character函数。</p>
+</blockquote>
+<pre><code class="language-renpy">define s = Character(
+  &quot;Sylvie&quot;,
+  who_color=&quot;#FFA500&quot;,
+  what_color=&quot;#FFE4E1&quot;,
+  what_prefix=&quot;『&quot;,
+  what_suffix=&quot;』&quot;,
+)
+
+label start:
+
+  s &quot;你好！&quot;
+
+  return
+</code></pre>
+<p>下面是一个nvl角色样例</p>
+<pre><code class="language-renpy">define s = Character(
+  &quot;Sylvie&quot;,
+  kind=nvl
+)
+
+label start:
+
+  s &quot;&quot;&quot;
+  先帝创业未半而中道崩殂，今天下三分，益州疲弊，此诚危急存亡之秋也。
+
+  然侍卫之臣不懈于内，忠志之士忘身于外者，盖追先帝之殊遇，欲报之于陛下也。
+
+  诚宜开张圣听，以光先帝遗德，恢弘志士之气，不宜妄自菲薄，引喻失义，以塞忠谏之路也。
+  &quot;&quot;&quot; 
+
+  nvl clear
+
+  return
+</code></pre>
+<p>由三引号引起来的文本，Ren'Py会根据内容中的空行自动分段。分段后的每一段内容，都会创建自身的say语句。</p>
+<h2 id="特殊文本样式">特殊文本样式<a class="headerlink" href="#特殊文本样式" title="Permanent link">&para;</a></h2>
+<p>所有在Ren'Py中以字符串形式呈现的文本都可以使用特殊的样式，下面将介绍一些常用的特殊样式、使用方法以及注意事项。</p>
+<h3 id="转义符">转义符<a class="headerlink" href="#转义符" title="Permanent link">&para;</a></h3>
+<p>如果你想在文本中呈现一些特殊字符需要转义来转义防止Ren'Py误解我们的意思。</p>
+<p>在文本中，以下字符为转义以后的写法：</p>
+<ul>
+<li><code>\</code> -&gt; <code>\\</code></li>
+<li><code>'</code> -&gt; <code>\'</code></li>
+<li><code>"</code> -&gt; <code>\"</code></li>
+<li><code>%</code> -&gt; <code>\%</code> 或 <code>%%</code></li>
+<li><code>{</code> -&gt; <code>{{</code> </li>
+<li><code>[</code> -&gt; <code>[[</code></li>
+<li><code>【</code> -&gt; <code>【【</code></li>
+</ul>
+<p>如果你的字符串是以一对双引号表示的，那么如果你想在文本中显示双引号就需要使用转义符，如果你的字符串是以单引号表示，那么则反之。</p>
+<pre><code class="language-renpy">label start:
+
+    &quot;\&quot;你好。\&quot;&quot;
+    '\'我是......\''
+
+    return
+</code></pre>
+<p>同时，还能使用 <code>\n</code> 来表示换行：</p>
+<pre><code class="language-renpy">label start:
+
+    &quot;1\n2\n3\n4&quot;
+
+    return
+</code></pre>
+<h3 id="内插字符">内插字符<a class="headerlink" href="#内插字符" title="Permanent link">&para;</a></h3>
+<p>Ren'Py支持在文本中插入一个表达式并计算表达式的值，我们叫做内插字符。在Python中也有类似的字符串格式化用法。</p>
+<p>我们使用一对方括号来修饰我们的表达式。</p>
+<pre><code class="language-renpy">define s = Character(&quot;Sylvie&quot;)
+default point = 1
+
+label start:
+    s &quot;我的名字是[s.name]&quot;
+    &quot;当前好感度为[point]&quot;
+
+    return
+</code></pre>
+<p>同时，内插字符还支持一些特殊转换标记。我们使用 <code>!</code> 来表示后面的字符为特殊转换标记。下面是一些比较常用的转换标记：</p>
+<ul>
+<li><code>!i</code> 表示在字符串中进行二次插值</li>
+</ul>
+<pre><code class="language-renpy">define s = Character(&quot;Sylvie&quot;)
+default point = 1
+
+label start:
+    $ introduction = &quot;名字为[s.name]，好感度为[point]&quot;
+    s &quot;[introduction!i]&quot;
+
+    return
+</code></pre>
+<ul>
+<li><code>!u</code> 会强制把英文文本转换成大写。</li>
+<li><code>!l</code> 会强制把英文文本转换为小写。</li>
+<li><code>!c</code> 会强制把英文文本首字母转换为大写。</li>
+</ul>
+<p>我们可以配合一起使用：</p>
+<pre><code class="language-renpy">define s = Character(&quot;Sylvie&quot;)
+
+label start:
+
+    $ content = &quot;hello WORLD!&quot;
+
+    # 使用顺序不分先后
+    s &quot;[content!lc]&quot;
+
+    return
+</code></pre>
+<h3 id="文本标签">文本标签<a class="headerlink" href="#文本标签" title="Permanent link">&para;</a></h3>
+<p>如果你使用过HTML，那么你一定对“标签”很熟悉！在Ren'Py中，我们采用文本标签来实现对文本的特殊效果。</p>
+<p>文本标签由一对大括号和一个标签名以及相应参数组成，不同的标签名及参数有不同的效果。</p>
+<p>所有文本标签都需要闭合，其中有些文本标签是自闭和的，而有些文本标签需要对应的闭合标签来闭合。标签闭合间的文本将会呈现特殊效果。一般来说，文本标签的格式为：</p>
+<pre><code class="language-renpy">&quot;{tag=arg}text{/tag}&quot;
+</code></pre>
+<p>其中 <code>tag</code> 为标签名，<code>arg</code> 为参数值，<code>{/tag}</code> 为闭合标签。</p>
+<p>还有一些格式为：</p>
+<pre><code class="language-renpy">&quot;text{tag=arg}&quot;
+</code></pre>
+<p>让我们来看看有哪些常用的文本标签。</p>
+<h4 id="a"><code>a</code><a class="headerlink" href="#a" title="Permanent link">&para;</a></h4>
+<p>没错，正如其名，锚点标签的作用就是“传送”，能够引导玩家进入不同的地方。它拥有多个参数，下面来一一介绍：</p>
+<ul>
+<li>jump</li>
+</ul>
+<p>当入参为 <code>jump</code> 时，会进入其冒号后指定的脚本标签。</p>
+<pre><code class="language-renpy">label start:
+    &quot;点{a=jump:dianwo}我{/a}进入&quot;
+    return
+
+label dianwo:
+    &quot;已进入&quot;
+    return
+</code></pre>
+<ul>
+<li>call</li>
+</ul>
+<p>当入参为 <code>call</code> 时，会调用其冒号后指定的脚本标签。</p>
+<pre><code class="language-renpy">label start:
+    &quot;点{a=call:dianwo}我{/a}进入&quot;
+    &quot;出来了&quot;
+    return
+
+label dianwo:
+    &quot;已进入&quot;
+    return
+</code></pre>
+<ul>
+<li>show</li>
+</ul>
+<p>当入参为 <code>show</code> 时，会显示其冒号后指定的界面，这里涉及到一个新的概念“界面”，我们不展开讨论。</p>
+<ul>
+<li>URL</li>
+</ul>
+<p>当入参部分是一个URL（或者说网站链接）时，会自动启动浏览器打开链接。</p>
+<pre><code class="language-renpy">label start:
+    &quot;{a=https://www.bilibili.com/video/BV1uT4y1P7CX/}点我涩涩{/a}&quot;
+    return
+</code></pre>
+<h4 id="alpha">alpha<a class="headerlink" href="#alpha" title="Permanent link">&para;</a></h4>
+<p>alpha文本标签指定一个透明度，渲染范围为自身及其闭合标签内的文本。透明度是一个介于0.0和1.0之间的数值，分别对应完全透明和完全不透明。</p>
+<pre><code class="language-renpy">label start:
+
+    &quot;{alpha=0.8}总觉得......{/alpha}&quot;
+    &quot;{alpha=0.5}要消失了呢......{/alpha}&quot;
+    &quot;{alpha=0.3}......{/alpha}&quot;
+
+    return
+</code></pre>
+<h4 id="b">b<a class="headerlink" href="#b" title="Permanent link">&para;</a></h4>
+<p>粗体标签，将自身及其闭合标签内的文本渲染为粗体。</p>
+<h4 id="i">i<a class="headerlink" href="#i" title="Permanent link">&para;</a></h4>
+<p>斜体标签将自身及其闭合标签之间的文本渲染为斜体。</p>
+<h4 id="s">s<a class="headerlink" href="#s" title="Permanent link">&para;</a></h4>
+<p>删除线标签在其自身及其闭合标签之间的文本上画一条删除线。</p>
+<h4 id="u">u<a class="headerlink" href="#u" title="Permanent link">&para;</a></h4>
+<p>下划线标签在其自身及其闭合标签之间的文本添加下划线。</p>
+<h4 id="color">color<a class="headerlink" href="#color" title="Permanent link">&para;</a></h4>
+<p>颜色文本标签将自身及其闭合标签内的文本渲染为特定的颜色值。颜色值使用 <code>#rgb</code> <code>#rgba</code> <code>#rrggbb</code> <code>#rrggbbaa</code> 格式之一。</p>
+<h4 id="cps">cps<a class="headerlink" href="#cps" title="Permanent link">&para;</a></h4>
+<p>cps标签用于指定其闭合标签内的文本每秒钟显示的字符数，若带 <code>*</code>，则表示当前速度的倍数。</p>
+<pre><code class="language-renpy">label start:
+    &quot;{cps=30}时间要开始加速了！{/cps}&quot;
+    return
+</code></pre>
+<h4 id="font">font<a class="headerlink" href="#font" title="Permanent link">&para;</a></h4>
+<p>字体标签将标签自身及其闭合区间之间的文本渲染为指定的字体。入参即使用的字体文件名或路径。</p>
+<h4 id="image">image<a class="headerlink" href="#image" title="Permanent link">&para;</a></h4>
+<p>图片标签会在文本中内插一个图像。（可以用于插入表情包）</p>
+<h4 id="size">size<a class="headerlink" href="#size" title="Permanent link">&para;</a></h4>
+<p>字号标签改变了其自己及其闭合标签内的文本字号。若参数为整数则表示文本大小，若为一个 <code>*</code> 加一个浮点数的形式则表示为当前文本大小的倍数大小。</p>
+<h4 id="fast">fast<a class="headerlink" href="#fast" title="Permanent link">&para;</a></h4>
+<p>fast标签只能用于对话中（即say语句），改标签为自闭和标签，在该标签前面的文本内容会立即显示。</p>
+<pre><code class="language-renpy">label start:
+    &quot;你说&quot;
+    &quot;什么？！{fast}&quot;
+    return
+</code></pre>
+<h4 id="nw">nw<a class="headerlink" href="#nw" title="Permanent link">&para;</a></h4>
+<p>nw标签同样只能用于对话中（即say语句），是一个自闭合标签，该标签前的那行文本内容在显示一次后会立刻消失，显示下一句话。</p>
+<pre><code class="language-renpy">label start:
+    &quot;什么东西？{nw}&quot;
+    &quot;？可恶&quot;
+    return
+</code></pre>
+<p>若指定参数，则表示等待对应的秒数后再执行文本消失。</p>
+<pre><code class="language-renpy">label start:
+    &quot;你好？{nw=2}&quot;
+    &quot;怎么不说话呢？&quot;
+    return
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ZYKsslm" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://space.bilibili.com/590816142" target="_blank" rel="noopener" title="space.bilibili.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0q13.2 0 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0q13.2 0 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.tracking"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-renpy.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+      
+    
+  </body>
+</html>
