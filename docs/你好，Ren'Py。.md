@@ -133,6 +133,7 @@ Ren'Py项目目录分为 *基础目录* 和 *游戏目录*。
 
 - Project
   - log.txt
+  - .gitignore
   - game
     - audio
       - ......
@@ -149,6 +150,9 @@ Ren'Py项目目录分为 *基础目录* 和 *游戏目录*。
       - common.rpym
       - common.rpymc
       - ......
+    - libs
+      - libs.txt
+      - ......
     - gui.rpy
     - gui.rpyc
     - options.rpy
@@ -164,6 +168,7 @@ Ren'Py项目目录分为 *基础目录* 和 *游戏目录*。
 *Project* 即为你的项目目录也是基础目录，基础目录下的 *game* 目录即为你的游戏目录。
 
 - `log.txt` 文件为游戏日志，包含游戏版本，创建时间等信息。
+- `.gitignore` 文件为 Git 版本管理忽略文件。（用于忽略不需要提交到版本管理的文件）注：该文件一般用不到。
 - `trackback.txt` 文件（若存在）为游戏报错信息。
 - `error.txt` 文件（若存在）为脚本报错信息（语法错误）。
 - `navigation.json` 文件为项目配置信息。
